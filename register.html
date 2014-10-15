@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>用户注册页面</title>
+<style>
+#register{
+	width:auto;
+	height:600px;
+	border:2px solid $ccc;
+	font-size:12px;
+}	
+#register h2{
+	text-indent:0;
+	text-align:center;
+	//去除字体的距离，然后居中
+}
+#register dl{
+	width:400px;
+	margin:0 auto;
+}
+#register dl dt{
+	text-align:center;
+	padding:10px 0;
+	font-weight:bold;
+	//字体加粗
+}
+#register dl dd{
+	padding:5px 0 5px 120px;
+}
+#register dl dd input.text{
+	width:220px;
+	height:19px;
+	//input.text就是class为text的
+}
+#register dl dd input.submit{
+	width:60px;
+	height:19px;
+	border:1px dashed #333;
+	cursor:pointer;
+	margin:0 0 0 120px;
+	}
+
+#banner{
+		width:auto;
+	height:100px;
+	
+	font-size:12px;
+}
+</style>
+</head>
+<body>
+	<div id="banner">
+	
+	</div>
+
+	<div id="register">
+		<h2>会员注册</h2>
+		<form name="userregister"method="post" action="register.php">
+			<dl>
+				<dt>请填写以下内容</dt>
+					<dd>用户名:<input type="text" name="username" class="text"/>(*必填)</dd>
+					<dd>密码:<input type="password" name="password1" class="text"/>(*必填)</dd>
+					<dd>确认密码:<input type="password" name="password2" class="text"/>(*必填)</dd>
+					<dd>性别:<input type="radio" name="sex" value="男" checked="checked"/>男
+							 <input type="radio" value="女" name="sex" />女</dd>
+					<dd>电子邮箱:<input type="text" name="email" class="text"/></dd>
+					<dd><input type="submit" class="submit" value="注册"/></dd>
+			</dl>
+		</form>
+	</div>
+</body>
+</html>

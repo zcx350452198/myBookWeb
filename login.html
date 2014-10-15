@@ -1,0 +1,50 @@
+<html>
+<head>
+		<title>登陆界面</title>
+	<script>
+		//该函数用于判断用户是否已输入用户名和密码
+		function r(){
+			var username=document.getElementById("username");
+
+			var pass=document.getElementById("password");
+			if(username.value==""){
+				alert("请输入用户名!");
+				username.focus();
+				return ;
+			}
+
+			if(pass.value==""){
+				alert("请输入密码");
+				return ;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body >
+<h1 align="center">前台登陆界面</h1>
+<div align="center">
+<form name="userLogin" method="post" action="login.php" >
+	<table id="login" width="350" bgcolor="#ccffcc" style="border-color" border="1">
+		<tr align="center"><td>用户名:</td>
+			<td><input name="username" type="text" id="username" class="textinput"/></td>
+		</tr>
+		<tr align="center">
+			<td>密码:</td>
+			<td><input name="pwd" type="password" id="password" class="textinput"/></td>
+		</tr>
+		<tr align="center">
+			<td>验证码</td><td><input type="text" name="yanzhengma"></td>
+		</tr>
+		<tr align="center">
+			<td colspan="2">
+			<input type="submit" class="btn" value="登陆" onclick="r();">&nbsp&nbsp;
+			
+			<input type="reset" class="btn" value="重置">
+			</td>
+		</tr>
+	</table>
+</form>
+<a href="regit.html">[注册]</a>
+</body>
+</html>
