@@ -1,67 +1,67 @@
-£¼html£¾
-£¼head£¾
-£¼title£¾php·ÖÒ³Ê¾Àı£¼/title£¾
-£¼meta http-equiv="Content-Type" content="text/html; charset=gb2312"£¾ 
-£¼/head£¾
+ï¼œhtmlï¼
+ï¼œheadï¼
+ï¼œtitleï¼phpåˆ†é¡µç¤ºä¾‹ï¼œ/titleï¼
+ï¼œmeta http-equiv="Content-Type" content="text/html; charset=gb2312"ï¼ 
+ï¼œ/headï¼
 
-£¼body£¾
-£¼?php
-¡¡$conn=mysql_connect("localhost","root","root");
-¡¡//Éè¶¨Ã¿Ò»Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êı
-¡¡$pagesize=1;
-¡¡mysql_select_db("test",$conn);
-¡¡//È¡µÃ¼ÇÂ¼×ÜÊı$rs£¬¼ÆËã×ÜÒ³ÊıÓÃ
-¡¡$rs=mysql_query("select count(*) from tb_product",$conn);
-¡¡$myrow = mysql_fetch_array($rs);
-¡¡$numrows=$myrow[0];
-¡¡//¼ÆËã×ÜÒ³Êı
+ï¼œbodyï¼
+ï¼œ?php
+ã€€$conn=mysql_connect("localhost","root","root");
+ã€€//è®¾å®šæ¯ä¸€é¡µæ˜¾ç¤ºçš„è®°å½•æ•°
+ã€€$pagesize=1;
+ã€€mysql_select_db("test",$conn);
+ã€€//å–å¾—è®°å½•æ€»æ•°$rsï¼Œè®¡ç®—æ€»é¡µæ•°ç”¨
+ã€€$rs=mysql_query("select count(*) from tb_product",$conn);
+ã€€$myrow = mysql_fetch_array($rs);
+ã€€$numrows=$myrow[0];
+ã€€//è®¡ç®—æ€»é¡µæ•°
 
-¡¡$pages=intval($numrows/$pagesize);
-¡¡if ($numrows%$pagesize)
-¡¡¡¡$pages++;
-¡¡//ÉèÖÃÒ³Êı
-¡¡if (isset($_GET['page'])){
-¡¡¡¡$page=intval($_GET['page']);
-¡¡}
-¡¡else{
-¡¡¡¡//ÉèÖÃÎªµÚÒ»Ò³ 
-¡¡¡¡$page=1;
-¡¡}
-¡¡//¼ÆËã¼ÇÂ¼Æ«ÒÆÁ¿
-¡¡$offset=$pagesize*($page - 1);
-¡¡//¶ÁÈ¡Ö¸¶¨¼ÇÂ¼Êı
-¡¡$rs=mysql_query("select * from myTable order by id desc limit $offset,$pagesize",$conn);
-¡¡if ($myrow = mysql_fetch_array($rs))
-¡¡{
-¡¡¡¡$i=0;
-¡¡¡¡?£¾
-¡¡¡¡£¼table border="0" width="80%"£¾
-¡¡¡¡£¼tr£¾
-¡¡¡¡¡¡£¼td width="50%" bgcolor="#E0E0E0"£¾
-¡¡¡¡¡¡¡¡£¼p align="center"£¾±êÌâ£¼/td£¾
-¡¡¡¡¡¡¡¡£¼td width="50%" bgcolor="#E0E0E0"£¾
-¡¡¡¡¡¡¡¡£¼p align="center"£¾·¢²¼Ê±¼ä£¼/td£¾
-¡¡¡¡£¼/tr£¾
-¡¡¡¡£¼?php
-¡¡¡¡¡¡do {
-¡¡¡¡¡¡¡¡$i++;
-¡¡¡¡¡¡¡¡?£¾
-¡¡¡¡£¼tr£¾
-¡¡¡¡¡¡£¼td width="50%"£¾£¼?=$myrow["news_title"]?£¾£¼/td£¾
-¡¡¡¡¡¡£¼td width="50%"£¾£¼?=$myrow["news_cont"]?£¾£¼/td£¾
-¡¡¡¡£¼/tr£¾
-¡¡¡¡¡¡£¼?php
-¡¡¡¡¡¡}
-¡¡¡¡¡¡while ($myrow = mysql_fetch_array($rs));
-¡¡¡¡¡¡¡¡echo "£¼/table£¾";
-¡¡¡¡}
-¡¡¡¡echo "£¼div align='center'£¾¹²ÓĞ".$pages."Ò³(".$page."/".$pages.")";
-¡¡¡¡for ($i=1;$i£¼ $page;$i++)
-¡¡¡¡¡¡echo "£¼a href='fenye.php?page=".$i."'£¾[".$i ."]£¼/a£¾ ";
-¡¡¡¡¡¡echo "[".$page."]";
-¡¡¡¡¡¡for ($i=$page+1;$i£¼=$pages;$i++)
-¡¡¡¡¡¡¡¡echo "£¼a href='fenye.php?page=".$i."'£¾[".$i ."]£¼/a£¾ ";
-¡¡¡¡¡¡¡¡echo "£¼/div£¾";
-¡¡¡¡¡¡?£¾
-¡¡¡¡£¼/body£¾
-¡¡¡¡£¼/html£¾ 
+ã€€$pages=intval($numrows/$pagesize);
+ã€€if ($numrows%$pagesize)
+ã€€ã€€$pages++;
+ã€€//è®¾ç½®é¡µæ•°
+ã€€if (isset($_GET['page'])){
+ã€€ã€€$page=intval($_GET['page']);
+ã€€}
+ã€€else{
+ã€€ã€€//è®¾ç½®ä¸ºç¬¬ä¸€é¡µ 
+ã€€ã€€$page=1;
+ã€€}
+ã€€//è®¡ç®—è®°å½•åç§»é‡
+ã€€$offset=$pagesize*($page - 1);
+ã€€//è¯»å–æŒ‡å®šè®°å½•æ•°
+ã€€$rs=mysql_query("select * from myTable order by id desc limit $offset,$pagesize",$conn);
+ã€€if ($myrow = mysql_fetch_array($rs))
+ã€€{
+ã€€ã€€$i=0;
+ã€€ã€€?ï¼
+ã€€ã€€ï¼œtable border="0" width="80%"ï¼
+ã€€ã€€ï¼œtrï¼
+ã€€ã€€ã€€ï¼œtd width="50%" bgcolor="#E0E0E0"ï¼
+ã€€ã€€ã€€ã€€ï¼œp align="center"ï¼æ ‡é¢˜ï¼œ/tdï¼
+ã€€ã€€ã€€ã€€ï¼œtd width="50%" bgcolor="#E0E0E0"ï¼
+ã€€ã€€ã€€ã€€ï¼œp align="center"ï¼å‘å¸ƒæ—¶é—´ï¼œ/tdï¼
+ã€€ã€€ï¼œ/trï¼
+ã€€ã€€ï¼œ?php
+ã€€ã€€ã€€do {
+ã€€ã€€ã€€ã€€$i++;
+ã€€ã€€ã€€ã€€?ï¼
+ã€€ã€€ï¼œtrï¼
+ã€€ã€€ã€€ï¼œtd width="50%"ï¼ï¼œ?=$myrow["news_title"]?ï¼ï¼œ/tdï¼
+ã€€ã€€ã€€ï¼œtd width="50%"ï¼ï¼œ?=$myrow["news_cont"]?ï¼ï¼œ/tdï¼
+ã€€ã€€ï¼œ/trï¼
+ã€€ã€€ã€€ï¼œ?php
+ã€€ã€€ã€€}
+ã€€ã€€ã€€while ($myrow = mysql_fetch_array($rs));
+ã€€ã€€ã€€ã€€echo "ï¼œ/tableï¼";
+ã€€ã€€}
+ã€€ã€€echo "ï¼œdiv align='center'ï¼å…±æœ‰".$pages."é¡µ(".$page."/".$pages.")";
+ã€€ã€€for ($i=1;$iï¼œ $page;$i++)
+ã€€ã€€ã€€echo "ï¼œa href='fenye.php?page=".$i."'ï¼[".$i ."]ï¼œ/aï¼ ";
+ã€€ã€€ã€€echo "[".$page."]";
+ã€€ã€€ã€€for ($i=$page+1;$iï¼œ=$pages;$i++)
+ã€€ã€€ã€€ã€€echo "ï¼œa href='fenye.php?page=".$i."'ï¼[".$i ."]ï¼œ/aï¼ ";
+ã€€ã€€ã€€ã€€echo "ï¼œ/divï¼";
+ã€€ã€€ã€€?ï¼
+ã€€ã€€ï¼œ/bodyï¼
+ã€€ã€€ï¼œ/htmlï¼ 

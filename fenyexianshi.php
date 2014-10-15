@@ -1,37 +1,37 @@
 <html>
 <head>
-	<title>PHP·ÖÒ³ÏÔÊ¾</title>
+	<title>PHPåˆ†é¡µæ˜¾ç¤º</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=gb2312">
 </head>
 <body>
 <?php
 	
 	$con=mysql_connect("localhost","root","root");
-	//Éè¶¨Ã¿Ò»Ò³ÏÔÊ¾µÄ¼ÇÂ¼Êı
+	//è®¾å®šæ¯ä¸€é¡µæ˜¾ç¤ºçš„è®°å½•æ•°
 	$pagessize=1;
 	mysql_select_db("text",$con);
 
-	//È¡µÃ¼ÇÂ¼×ÜÊı$rs,¼ÆËã×ÜÒ³Êı
+	//å–å¾—è®°å½•æ€»æ•°$rs,è®¡ç®—æ€»é¡µæ•°
 	$rs=mysql_query("select count(*) from  myTable",$con);
 	$myrow=mysql_fetch_array($rs);
 	$numrows=$myrow[0];
 
-	//¼ÆËã×ÜÒ³Êı
+	//è®¡ç®—æ€»é¡µæ•°
 	$pages=intval($numrows/$pagesize);
 	if($numrows%pagesize){
 		$page++;
 	}
-	//ÉèÖÃÒ³Êı
+	//è®¾ç½®é¡µæ•°
 	if(isset($_GET['page'])){
 		$page=intval($GET['page']);
 	}
 	else{
-		//ÉèÖÃÎªµÚÒ»Ò³
+		//è®¾ç½®ä¸ºç¬¬ä¸€é¡µ
 		$page=1;
 	}
-	//¼ÆËã¼ÇÂ¼Æ«ÒÆÁ¿
+	//è®¡ç®—è®°å½•åç§»é‡
 	$offset=$pagesize*($page-1);
-	//¶ÁÈ¡Ö¸¶¨¼ÇÂ¼Êı
+	//è¯»å–æŒ‡å®šè®°å½•æ•°
 	$rs=mysql_query("select * from myTable order by id desc limit $offset,$pagesize",$conn);
 	if($myrow=mysql_fetch_array($rs)){
 		$i=0;
@@ -39,9 +39,9 @@
 	<table border="0" width="80%">
 		<tr>
 			<td width="50%" bgcolor="#E0E0E0">
-			<p align="center">±êÌâ</td>
+			<p align="center">æ ‡é¢˜</td>
 			<td width="50%" bgcolor="#E0E0E0">
-			<p align="center">·¢²¼Ê±¼ä</td>
+			<p align="center">å‘å¸ƒæ—¶é—´</td>
 		</tr>
 	<?php
 		do{
@@ -58,7 +58,7 @@
 		echo "</table>";
 	
 	}
-	echo "<div align='center'>¹²ÓĞ".$page."Ò³(".$page."/".$pages.")";
+	echo "<div align='center'>å…±æœ‰".$page."é¡µ(".$page."/".$pages.")";
 	for($i=1;$i<$page;$i++){
 		echo "<a href='fenyexianshi.php?page=".$i."]</a>";
 		echo "</div>";

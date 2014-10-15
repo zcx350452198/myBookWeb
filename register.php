@@ -1,49 +1,49 @@
 <?php
 	header("Content-Type;text/html;charset=UTF-8");
 
-	//Á¬½ÓÊı¾İ¿â
+	//è¿æ¥æ•°æ®åº“
 	$con=mysql_connect("localhost","root","root");
-	//ÅĞ¶ÏÊÇ·ñÁ¬½ÓÊı¾İ¿â³É¹¦
+	//åˆ¤æ–­æ˜¯å¦è¿æ¥æ•°æ®åº“æˆåŠŸ
 	if(!$con){
 		die('could not connect:'.mysql_error());
 	}
-	//Ñ¡ÔñÊı¾İ¿â
+	//é€‰æ‹©æ•°æ®åº“
 	$db_select=mysql_select_db("shop",$con);
 
-	//Ñ¡Ôñ±àÂë¼¯
+	//é€‰æ‹©ç¼–ç é›†
 	mysql_query("set names utf8");
 
-	//½ÓÊÕÓÃ»§ĞÅÏ¢
+	//æ¥æ”¶ç”¨æˆ·ä¿¡æ¯
 
-	//»ñÈ¡×¢²áÓÃ»§ÓÃ»§Ãû
+	//è·å–æ³¨å†Œç”¨æˆ·ç”¨æˆ·å
 	$username=$_POST['username'];
-	//»ñÈ¡×¢²áÓÃ»§µÚÒ»±éÃÜÂë
+	//è·å–æ³¨å†Œç”¨æˆ·ç¬¬ä¸€éå¯†ç 
 	$password1=$_POST['password1'];
-	//»ñÈ¡×¢²áÓÃ»§µÚ¶ş±éÃÜÂë
+	//è·å–æ³¨å†Œç”¨æˆ·ç¬¬äºŒéå¯†ç 
 	$password2=$_POST['password2'];
-	//»ñÈ¡×¢²áÓÃ»§ĞÔ±ğ
+	//è·å–æ³¨å†Œç”¨æˆ·æ€§åˆ«
 	$sex=$_POST['sex'];
-	//»ñÈ¡×¢²áÓÃ»§µç×ÓÓÊÏä
+	//è·å–æ³¨å†Œç”¨æˆ·ç”µå­é‚®ç®±
 	$email=$_POST['email'];
 	
-	$password=' ';//×îÖÕÃÜÂë
+	$password=' ';//æœ€ç»ˆå¯†ç 
 	if($password1==$password2 && $password1!='' && $password2!=''){
 		$password=$password1;
 	}else{
-		echo "Á½´ÎÃÜÂë²»Ò»Ñù»òÃ»ÓĞÊäÈëÃÜÂë";
+		echo "ä¸¤æ¬¡å¯†ç ä¸ä¸€æ ·æˆ–æ²¡æœ‰è¾“å…¥å¯†ç ";
 	}
-	//Èç¹ûĞÔ±ğÎªÄĞ£¬ÔòÉèÖÃÎª1£¬Èç¹ûĞÔ±ğÎªÅ®£¬ÉèÖÃÎª0
-	if($sex=='ÄĞ'){
+	//å¦‚æœæ€§åˆ«ä¸ºç”·ï¼Œåˆ™è®¾ç½®ä¸º1ï¼Œå¦‚æœæ€§åˆ«ä¸ºå¥³ï¼Œè®¾ç½®ä¸º0
+	if($sex=='ç”·'){
 		$sex=1;
 	}else{
 		$sex=0;
 	}
 
-	//½«×¢²áÃûÓëÊı¾İ¿âÖĞÓÃ»§Ãû½øĞĞ±È½Ï£¬¿´Êı¾İ¿âÖĞÊÇ·ñÒÑ´æÔÚ£¬Èô´æÔÚÔòÌáÊ¾¸ÃÓÃ»§ÃûÒÑ±»×¢²á£¬·ñÔòÕı³£×¢²á
+	//å°†æ³¨å†Œåä¸æ•°æ®åº“ä¸­ç”¨æˆ·åè¿›è¡Œæ¯”è¾ƒï¼Œçœ‹æ•°æ®åº“ä¸­æ˜¯å¦å·²å­˜åœ¨ï¼Œè‹¥å­˜åœ¨åˆ™æç¤ºè¯¥ç”¨æˆ·åå·²è¢«æ³¨å†Œï¼Œå¦åˆ™æ­£å¸¸æ³¨å†Œ
 	
 	$checkusername="select * from shop_user where user_name='$username';";	
 	$checkresult=mysql_query($checkusername,$con);
-	//ÓÃ»§ÃûÒÑ´æÔÚ£¬×Ô¶¯·µ»Ø×¢²áÒ³Ãæ
+	//ç”¨æˆ·åå·²å­˜åœ¨ï¼Œè‡ªåŠ¨è¿”å›æ³¨å†Œé¡µé¢
 	if(is_array(mysql_fetch_row($checkresult))){
 		?>
 		<script language="javascript">location.href="register.html"</script>
@@ -51,7 +51,7 @@
 	}
 	
 	
-	//½«×¢²áÓÃ»§ĞÅÏ¢µ¼Èëµ½MySQLÊı¾İ¿âÖĞ
+	//å°†æ³¨å†Œç”¨æˆ·ä¿¡æ¯å¯¼å…¥åˆ°MySQLæ•°æ®åº“ä¸­
 	$query="insert into shop_user values ('$username','$password','$sex','$email')";
 	$result=mysql_query($query);
 	if($result){

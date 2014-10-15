@@ -3,7 +3,7 @@
 	header("Content-Type;text/html;charset=UTF-8");
 	
 	
-	//Á¬½ÓÊı¾İ¿â
+	//è¿æ¥æ•°æ®åº“
 	$con=mysql_connect("localhost","root","root");
 	if(!$con){
 		die('could noy connect: '.mysql_error());
@@ -12,19 +12,19 @@
 	$db_select=mysql_select_db("shop",$con);
 	mysql_query("set names utf8");
 
-	//¸ÃÎÄ¼şµÄ×÷ÓÃÊÇ½ÓÊÜÓÃ»§ÊäÈëµÄĞÅÏ¢£¬½øĞĞ²éÑ¯£¬Å¶°´¶ÎÊÇ·ñ´æÔÚ
-	//Èç¹û´æÔÚ£¬ÔòÌø×ªµ½³É¹¦Ò³Ãæ£¬Èç¹û´íÎó£¬·µ»ØµÇÂ½½çÃæ
-	//½ÓÊÜÓÃ»§Ãû¼¸ÃÜÂë
+	//è¯¥æ–‡ä»¶çš„ä½œç”¨æ˜¯æ¥å—ç”¨æˆ·è¾“å…¥çš„ä¿¡æ¯ï¼Œè¿›è¡ŒæŸ¥è¯¢ï¼Œå“¦æŒ‰æ®µæ˜¯å¦å­˜åœ¨
+	//å¦‚æœå­˜åœ¨ï¼Œåˆ™è·³è½¬åˆ°æˆåŠŸé¡µé¢ï¼Œå¦‚æœé”™è¯¯ï¼Œè¿”å›ç™»é™†ç•Œé¢
+	//æ¥å—ç”¨æˆ·åå‡ å¯†ç 
 
-	//»ñÈ¡ÓÃ»§Ãû
+	//è·å–ç”¨æˆ·å
 	$username=$_POST['username'];
-	//»ñÈ¡ÃÜÂë
+	//è·å–å¯†ç 
 	$pwd=$_POST['pwd'];
 	
-	//¸ù¾İÓÃ»§Ãû¼°ÃÜÂë½øĞĞ²éÑ¯£¬
+	//æ ¹æ®ç”¨æˆ·ååŠå¯†ç è¿›è¡ŒæŸ¥è¯¢ï¼Œ
 	$sql="select * from shop_user where user_name='$username' AND user_password='$pwd';";
 
-	//Ö´ĞĞ²éÑ¯Óï¾ä
+	//æ‰§è¡ŒæŸ¥è¯¢è¯­å¥
 	$result=mysql_query($sql,$con);
 
 	$test=mysql_fetch_array($result);

@@ -1,27 +1,27 @@
 <?php
 	header("Content-Type;text/html;charset=UTF-8");
 
-	//Á¬½ÓÊý¾Ý¿â
+	//è¿žæŽ¥æ•°æ®åº“
 	$con=mysql_connect("localhost","root","root");
-	//ÅÐ¶ÏÊÇ·ñÁ¬½Ó³É¹¦
+	//åˆ¤æ–­æ˜¯å¦è¿žæŽ¥æˆåŠŸ
 	if(!$con){
 		die('could not connect:'.mysql_error());
 	}
 	
-	//Ñ¡ÔñÊý¾Ý¿â
+	//é€‰æ‹©æ•°æ®åº“
 	$db_select=mysql_select_db("shop",$con);
-	//ÉèÖÃ±àÂë
+	//è®¾ç½®ç¼–ç 
 	mysql_query("set names utf8");
 
 
-	//	»ñÈ¡ÊäÈëµÄ¹ÜÀíÔ±ÕËºÅºÍÃÜÂë
+	//	èŽ·å–è¾“å…¥çš„ç®¡ç†å‘˜è´¦å·å’Œå¯†ç 
 	$adminname=$_POST['adminname'];
 	$adminpwd=$_POST['adminpwd'];
 
-	//¸ù¾ÝÓÃ»§ÃûºÍÃÜÂë½øÐÐÊý¾Ý¿â²éÑ¯
+	//æ ¹æ®ç”¨æˆ·åå’Œå¯†ç è¿›è¡Œæ•°æ®åº“æŸ¥è¯¢
 	$sql="select * from shop_admin where admin_name='$adminname' AND admin_password='$adminpwd';";
 
-	//Ö´ÐÐ²éÑ¯Óï¾ä
+	//æ‰§è¡ŒæŸ¥è¯¢è¯­å¥
 	$result=mysql_query($sql,$con);
 	$test=mysql_fetch_array($result);
 

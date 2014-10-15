@@ -1,20 +1,20 @@
 <html>
 <head>
-		<title>µÇÂ½½çÃæ</title>
+		<title>ç™»é™†ç•Œé¢</title>
 	<script>
-		//¸Ãº¯ÊıÓÃÓÚÅĞ¶ÏÓÃ»§ÊÇ·ñÒÑÊäÈëÓÃ»§ÃûºÍÃÜÂë
+		//è¯¥å‡½æ•°ç”¨äºåˆ¤æ–­ç”¨æˆ·æ˜¯å¦å·²è¾“å…¥ç”¨æˆ·åå’Œå¯†ç 
 		function r(){
 			var username=document.getElementById("username");
 
 			var pass=document.getElementById("password");
 			if(username.value==""){
-				alert("ÇëÊäÈëÓÃ»§Ãû!");
+				alert("è¯·è¾“å…¥ç”¨æˆ·å!");
 				username.focus();
 				return ;
 			}
 
 			if(pass.value==""){
-				alert("ÇëÊäÈëÃÜÂë");
+				alert("è¯·è¾“å…¥å¯†ç ");
 				return ;
 			}
 			return true;
@@ -22,29 +22,29 @@
 	</script>
 </head>
 <body >
-<h1 align="center">Ç°Ì¨µÇÂ½½çÃæ</h1>
+<h1 align="center">å‰å°ç™»é™†ç•Œé¢</h1>
 <div align="center">
 <form name="userLogin" method="post" action="login.php" >
 	<table id="login" width="350" bgcolor="#ccffcc" style="border-color" border="1">
-		<tr align="center"><td>ÓÃ»§Ãû:</td>
+		<tr align="center"><td>ç”¨æˆ·å:</td>
 			<td><input name="username" type="text" id="username" class="textinput"/></td>
 		</tr>
 		<tr align="center">
-			<td>ÃÜÂë:</td>
+			<td>å¯†ç :</td>
 			<td><input name="pwd" type="password" id="password" class="textinput"/></td>
 		</tr>
 		<tr align="center">
-			<td>ÑéÖ¤Âë</td><td><input type="text" name="yanzhengma"></td>
+			<td>éªŒè¯ç </td><td><input type="text" name="yanzhengma"></td>
 		</tr>
 		<tr align="center">
 			<td colspan="2">
-			<input type="submit" class="btn" value="µÇÂ½" onclick="r();">&nbsp&nbsp;
+			<input type="submit" class="btn" value="ç™»é™†" onclick="r();">&nbsp&nbsp;
 			
-			<input type="reset" class="btn" value="ÖØÖÃ">
+			<input type="reset" class="btn" value="é‡ç½®">
 			</td>
 		</tr>
 	</table>
 </form>
-<a href="regit.html">[×¢²á]</a>
+<a href="regit.html">[æ³¨å†Œ]</a>
 </body>
 </html>
