@@ -1,0 +1,15 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<a class="brand" href="/">{$Think.config.name}</a>
+		<ul class="nav">
+			<eq name="Think.ACTION_NAME" value="login">
+            <li class="active"><a href="login">登陆</a></li>
+            <else/>
+            <eq name="Think.ACTION_NAME" value="index"><li class="active"><else/><li></eq><a href="index">后台首页</a></li>
+			<eq name="Think.ACTION_NAME" value="upload"><li class="active"><else/><li></eq><a href="upload">软件上传</a></li>
+			<eq name="Think.ACTION_NAME" value="config"><li class="active"><else/><li></eq><a href="config">网站配置</a></li>
+            <li><a href="logout">退出后台</a></li>
+            </eq>
+		</ul>
+	</div>
+</div>

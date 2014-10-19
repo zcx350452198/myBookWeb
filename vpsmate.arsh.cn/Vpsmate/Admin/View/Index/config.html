@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>网站配置 - {$Think.config.name}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div style="padding:0 0 20px 20px;">
+<form action="" method="post" enctype="multipart/form-data" name="upload">
+<div style="margin-top:40px">
+		<h4>网站名称</h4>
+        <blockquote style="margin-top:20px">
+        <input name="name" type="text" id="name" value="{$Think.config.name}" >
+        </blockquote>
+        <h4>网站标题</h4>
+        <blockquote style="margin-top:20px">
+        <input name="title" type="text" id="title" value="{$Think.config.title}" >
+        </blockquote>
+        <h4>网址域名</h4>
+        <blockquote style="margin-top:20px">
+        <input name="webroot" type="text" id="webroot" value="{$Think.config.webroot}" >
+        </blockquote>
+        <h4>DEMO网址</h4>
+        <blockquote style="margin-top:20px">
+        <input name="demo_url" type="text" id="demo_url" value="{$Think.config.demo_url}" >
+        </blockquote>
+        <h4>网站描述</h4>
+        <blockquote style="margin-top:20px">
+          <textarea name="description" id="description" style="width:50%; height:250px;">{$Think.config.description}</textarea>
+        </blockquote>
+        <blockquote style="margin-top:20px">
+        <input type="submit" value="保存" class="btn btn-success btn-large">
+        </blockquote>
+</div>
+</form>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>

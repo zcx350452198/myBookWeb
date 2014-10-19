@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>老版本安装说明 - {$Think.config.name}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div style="padding:0 0 20px 20px;">
+	<div style="margin-top:40px">
+		<h4>各版本安装包列表：</h4>
+		<blockquote style="margin-top:20px">
+        <volist name="list" id="vo">
+			<p>v{$vo.version} b{$vo.build|}：<a href="{$vo.download_url|stripslashes}" target="_blank" >{$Think.config.webroot}{$vo.download_url|stripslashes}</a></p>
+        </volist>  
+		</blockquote>
+	</div>
+	<div style="margin-top:40px">
+		<h4>旧版本安装步骤</h4>
+		<blockquote style="margin-top:20px">
+        	<p>第一步：使用 SSH 连接工具，如 PuTTY、XShell、SecureCRT 等，连接到您的 Linux 服务器。</p>
+			<p style="margin-top:20px">相应命令如下：<br>
+				<code># wget http://vpsmate.arsh.cn/tools/install.py</code><br>
+            </p>
+			<p style="margin-top:20px">第二步：下载特定版本的VPSMate安装包，并改名为<code>vpsmate.tar.gz</code>，将安装包与安装脚本放于同一目录下。</p>
+			<p style="margin-top:20px">
+				相应命令如下：<br>
+				<code>wget http://vpsmate.arsh.cn/Uploads/releases/vpsmate-1.0b9.tar.gz</code><br>
+				<code>mv vpsmate-1.0b9.tar.gz vpsmate.tar.gz</code><br>
+			</p>
+            <p style="margin-top:20px">第三步：在命令行中运行：<code>python install.py</code> 即可完成此版本的安装。</p>
+			<p style="margin-top:20px">
+				相应命令如下：<br>
+				<code># python install.py</code><br>
+			</p>
+			<p style="margin-top:20px">
+				如下图所示：<br>
+				<img src="__PUBLIC__/static/images/install/1.png"><br>
+			</p>
+			<p style="margin-top:20px">
+				安装完成后请设置管理员用户名和密码，如果直接回车，则使用默认的用户名 <code>admin</code> 和密码 <code>admin</code> 。<br>
+				设置完后，打开给定的链接地址即可访问您的 VPSMate 面板。<br>
+			</p>
+			<p style="margin-top:20px">
+				如下图所示：<br>
+				<img src="__PUBLIC__/static/images/install/2.png"><br>
+			</p>
+		</blockquote>
+	</div>
+	<div style="margin-top:40px">
+		<h4>后续操作</h4>
+		<blockquote style="margin-top:20px">
+			<p>请查看 <a href="manual">VPSMate 使用手册</a>。</p>
+		</blockquote>
+	</div>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>后台登陆 - {$Think.config.name}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div style="padding:0 0 20px 20px;">
+<form action="" method="post" enctype="multipart/form-data" name="login" id="login">
+<div style="margin-top:40px">
+		<h4>登陆</h4>
+        <blockquote style="margin-top:20px">
+          <p>用户名：<input name="username" type="text" id="username" ></p>
+          <p>密&nbsp;&nbsp;&nbsp;&nbsp;码：<input name="password" type="password" id="password" ></p>
+          <p style="margin-top:20px"><input name="snmbit" type="submit" value="登陆" id="snmbit" class="btn btn-success btn-large"></p>
+        </blockquote>
+</div>
+</form>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>

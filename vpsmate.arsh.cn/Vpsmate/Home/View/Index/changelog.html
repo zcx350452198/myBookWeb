@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>版本历史 - {$Think.config.name}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div style="padding:0 0 20px 20px;">   
+<volist name="list" id="vo">
+    <div style="margin-top:40px">
+		<h4>{$vo.name} v{$vo.version} b{$vo.build|} <span style="color:gray">({$vo.releasetime|date='Y-m-d',###})</span></h4>
+		<blockquote style="margin-top:20px">
+        {$vo.content|stripslashes}
+        </blockquote>
+     </div>
+</volist>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>

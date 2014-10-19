@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>软件上传 - {$Think.config.name}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div style="padding:0 0 20px 20px;">
+<form action="" method="post" enctype="multipart/form-data" name="upload">
+<div style="margin-top:40px">
+		<h4>软件名称</h4>
+        <blockquote style="margin-top:20px">
+        <input name="name" type="text" id="name" value="VPSMate" >
+        </blockquote>
+        <h4>版本号</h4>
+        <blockquote style="margin-top:20px">
+        <input name="version" type="text" id="version" value="2.0" >
+        </blockquote>
+        <h4>编译号</h4>
+        <blockquote style="margin-top:20px">
+        <input name="build" type="text" id="build" >
+        </blockquote>
+        <h4>软件上传</h4>
+        <blockquote style="margin-top:20px">
+        <input name="soft_upload" type='file' id="soft_upload" >
+        </blockquote>
+        <h4>软件描述</h4>
+        <blockquote style="margin-top:20px">
+          <textarea name="content" id="content">软件描述</textarea>
+        </blockquote>
+        <blockquote style="margin-top:20px">
+        <input name="snmbit" type="submit" value="提交" id="snmbit" class="btn btn-success btn-large">
+        </blockquote>
+</div>
+</form>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>

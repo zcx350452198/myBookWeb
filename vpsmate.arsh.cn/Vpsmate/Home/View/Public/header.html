@@ -1,0 +1,19 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<a class="brand" href="/">{$Think.config.name}</a>
+		<ul class="nav">
+			<eq name="Think.CONTROLLER_NAME" value="Index">
+            <eq name="Think.ACTION_NAME" value="index"><li class="active"><else/><li></eq><a href="/">首页</a></li>
+			<eq name="Think.ACTION_NAME" value="features"><li class="active"><else/><li></eq><a href="/features">功能特性</a></li>
+			<eq name="Think.ACTION_NAME" value="install"><li class="active"><else/><li></eq><a href="/install">安装说明</a></li>
+            <eq name="Think.ACTION_NAME" value="manual"><li class="active"><else/><li></eq><a href="/manual">使用手册</a></li>
+			<eq name="Think.ACTION_NAME" value="changelog"><li class="active"><else/><li></eq><a href="/changelog">版本历史</a></li>
+			<eq name="Think.ACTION_NAME" value="demo"><li class="active"><else/><li></eq><a href="/demo" target="_blank">在线演示</a></li>
+			<eq name="Think.ACTION_NAME" value="bbs"><li class="active"><else/><li></eq><a href="/bbs">交流社区</a></li>
+            <else/>
+            <li><a href="/">首页</a></li>
+            <eq name="Think.ACTION_NAME" value="index"><li class="active"><else/><li></eq><a href="/download">老版本安装说明</a></li>
+            </eq>
+		</ul>
+	</div>
+</div>

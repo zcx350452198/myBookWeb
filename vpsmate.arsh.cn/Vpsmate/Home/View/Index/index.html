@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{$Think.config.name} - {$Think.config.title}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=10">
+	<link href="__PUBLIC__/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+<include file="Public/header"/>
+<div class="hero-unit">
+	<div>
+		<h1>{$Think.config.name} <small>{$Think.config.title}</small></h1>
+	</div>
+	<div class="pull-right" style="text-align:center">
+		<p><img src="__PUBLIC__/static/images/1.png" width="300" height="276" style="margin-top:40px;"></p>
+		<p><a class="btn" href="http://bbs.vpsmate.org/read.php?tid=3" target="_blank">浏览更多功能截图 >></a></p>
+	</div>
+	<div style="margin-top:30px">
+    {$Think.config.description}
+	</div>
+	<div style="margin-top:30px">
+		<a class="btn btn-success btn-large" href="demo" target="_blank">在线演示</a>&nbsp;&nbsp;
+		<a class="btn btn-warning btn-large" href="install">开始安装（最新：{$soft_version}）</a>&nbsp;&nbsp;
+	</div>
+</div>
+<include file="Public/footer"/>
+</div>
+</body>
+</html>
